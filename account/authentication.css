@@ -1,0 +1,9 @@
+@media (min-width: 576px) { /* sm */
+    .bloc-content {
+        margin-top: 10vh;
+    }
+}
+
+.bloc-content {
+    padding: 30px;
+}
