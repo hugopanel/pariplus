@@ -1,3 +1,8 @@
+<?php
+
+require_once dirname(__DIR__) . '/server.php';
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,9 +14,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../pariplus.css">
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="authentication.css">
+  <link rel="stylesheet" href="../../pariplus.css">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../authentication.css">
 </head>
 <body style="background-color: var(--pariplus_dark);">
 <div class="navbar">
@@ -26,24 +31,45 @@
   <div class="col-sm-1 col-md-2 col-lg-3 d-none d-sm-block"></div>
   <div class="col-sm-10 col-md-8 col-lg-6">
     <div class="bloc bloc-content">
-      <form>
+      <form action="index.php" method="post">
         <div class="mb-3">
           <h1>Connexion</h1>
+          <?php
+          if (isset($errors))
+            if (in_array('query_error', $errors))
+              echo '<p class="text-danger">* Une erreur s\'est produite lors de la connexion à votre compte. Veuillez réessayer plus tard.</p>';
+          ?>
         </div>
         <div class="mb-3">
-          <label for="inputEmail" class="form-label">Adresse e-mail</label>
-          <input type="email" class="form-control" id="inputEmail">
+          <label for="inputUsername" class="form-label">Nom d'utilisateur</label>
+          <input type="text" class="form-control" id="inputUsername" name="inputUsername">
+          <?php
+          if (isset($errors)) {
+            if (in_array('username_empty', $errors))
+              echo '<p class="text-danger">* Vous devez renseigner un nom d\'utilisateur</p>';
+            if (in_array('credentials_wrong', $errors))
+              echo '<p class="text-danger">* Les identifiants de connexion sont incorrects.</p>';
+          }
+          ?>
         </div>
         <div class="mb-3">
           <label for="inputPassword" class="form-label">Mot de passe</label>
-          <input type="password" class="form-control" id="inputPassword">
+          <input type="password" class="form-control" id="inputPassword" name="inputPassword">
+          <?php
+          if (isset($errors))
+            if (in_array('password_empty', $errors))
+              echo '<p class="text-danger">* Vous devez renseigner un mot de passe.</p>';
+          ?>
         </div>
         <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="inputRemember">
-          <label class="form-check-label" for="inputRemember">Se souvenir de moi</label>
+          <input type="checkbox" class="form-check-input" id="checkboxRemember" name="checkboxRemember">
+          <label class="form-check-label" for="checkboxRemember">Se souvenir de moi</label>
         </div>
-        <button type="submit" class="btn btn-primary">Se connecter</button>
+        <button type="submit" class="btn btn-primary" name="buttonLogin">Se connecter</button>
       </form>
+      <div style="margin-top: 20px;">
+        Pas de compte ? <a href="../register">Inscrivez-vous</a> !
+      </div>
     </div>
   </div>
   <div class="col-sm-1 col-md-2 col-lg-3 d-none d-sm-block"></div>
