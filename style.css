@@ -1,0 +1,101 @@
+:root {
+    --pariplus_red: #F44C4C;
+    --pariplus_dark: #9F3232;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 400;
+
+    background-color: var(--pariplus_dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+}
+
+.nav-link {
+    font-weight: 700;
+    font-size: 14pt;
+    margin-left: 10px;
+}
+
+@media (max-width: 767.98px) { /* Taille md avec Bootstrap */
+    .navbar-nav {
+        height: calc(100vh - 80px) !important;
+    }
+
+    .nav-link {
+        margin: 0;
+        padding: 30px 0 30px 0;
+        font-weight: 900;
+        font-size: 25pt;
+    }
+
+    .nav-link::after {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        content: "";
+        transition: all 150ms ease-out;
+    }
+
+    .nav-link:hover::after {
+        display: block;
+        width: 90%;
+        height: 2px;
+        background-color: #e5acac;
+        content: "";
+    }
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #e5acac;
+}
+
+body {
+    --bs-body-font-family: 'Archivo', var(--bs-body-font-family);
+}
+
+.footer {
+    padding: 20px 0 100px 0;
+    bottom: 0;
+}
+
+.bloc {
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: #00000030 0 0 10px;
+    background-color: white;
+}
+
+.bloc-hero {
+    position: relative;
+    text-align: center;
+}
+
+.bloc-hero-img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.bloc-hero-title {
+    position: absolute;
+    top: 30%;
+    font-weight: 900;
+    width: 100%;
+}
+
+.bloc-content {
+    padding: 10px;
+}
+
+.bloc-ad {
+    border-radius: 10px;
+    width: 100%;
+    object-fit: cover;
+}
