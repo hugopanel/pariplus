@@ -99,3 +99,64 @@ body {
     width: 100%;
     object-fit: cover;
 }
+
+
+
+
+
+
+
+
+
+  
+  #prediction-joueur, #stat-equipe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 20px auto;
+    margin-left: 8.8%;
+    width:90%;
+  }
+
+  #prediction-joueur p {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    line-height: 1.1; 
+    font-family: 'Archivo', sans-serif;
+  }
+
+  .tuple {
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 200px;
+  }
+  
+  .tuple:hover {
+    background-color: blue;
+  }
+  
+   #loadMoreBtn, #loadMoreEquipeBtn {
+    border-radius: 50%; 
+    width: 50px; 
+    height: 50px; 
+    background-color: red; 
+    color: white; 
+    font-size: 18px; 
+    border: none; 
+  }
+
+  #loadMoreContainer {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+
+  
+  
+
+
