@@ -80,13 +80,17 @@ function displayTuples() {
     }
 
     const tuple = tuples[i];
-    const tupleHTML = `
-    <div class="tuple">
-      <p>Joueur: ${tuple['Joueur']}</p>
-      <p>Equipe: ${tuple['Equipe']}</p>
-      <p>Buts : ${tuple['Buts?']}</p>
-      <p>Passes décisives : ${tuple['PDP']}</p>
-      <p>Pénaltys marqués : ${tuple['PénM']}</p>
+    const tupleHTML = `    
+    <div class="card" style="width: 17rem;">
+        <div class="card-body">
+            <h5 class="card-title">${tuple['Joueur']}</h5>
+            <p class="card-subtitle mb-2 text-body-secondary">Joueur de football</p>
+            <p class="card-text">
+                Equipe : ${tuple['Equipe']}<br>
+                Buts : ${tuple['Buts?']}<br>
+                Passes décisives : ${tuple['PDP']}<br>
+                Pénaltys marqués : ${tuple['PénM']}</p>
+        </div>
     </div>
   `;
     predictionElement.innerHTML += tupleHTML;
@@ -124,7 +128,7 @@ fetch('csv/info_joueur.csv')
     console.error('Une erreur s\'est produite lors de la récupération du fichier CSV:', error);
   });
 
-const loadMoreBtn = document.getElementById('loadMoreBtn');
+const loadMoreBtn = document.getElementById('loadMoreJoueurBtn');
 loadMoreBtn.addEventListener('click', displayTuples);
 
 
@@ -141,11 +145,15 @@ function displayEquipeTuples() {
 
     const tuple = equipeTuples[i];
     const tupleHTML = `
-      <div class="tuple">
-        <p>Equipe: ${tuple['Equipe']}</p>
-        <p>Nombre de joueurs: ${tuple['# JC']}</p>
-        <p>Matchs joués: ${tuple['MJ']}</p>
-        <p>Buts: ${tuple['ButsP']}</p>
+      <div class="card" style="width: 17rem;">
+        <div class="card-body">
+          <h5 class="card-title">${tuple['Equipe']}</h5>
+          <p class="card-subtitle mb-2 text-body-secondary">Equipe de football</p>
+          <p class="card-text">
+            Nombre de joueurs : ${tuple['# JC']}<br>
+            Matchs joués : ${tuple['MJ']}<br>
+            Buts : ${tuple['ButsP']}</p>
+        </div>
       </div>
     `;
     equipeElement.innerHTML += tupleHTML;

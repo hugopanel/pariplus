@@ -156,11 +156,11 @@ function runPrediction() {
 
   if (equipe1 === equipe2) {
     const output = document.getElementById('output');
-    output.innerHTML = '';
-    const errorResult = document.createElement('p');
-    errorResult.textContent = '0-0';
+    // output.innerHTML = '';
+    // const errorResult = document.createElement('p');
+    output.textContent = 'Résultat de la prédiction : 0-0';
     // 'Les équipes sélectionnées sont identiques. Les scores sont donc 0-0'
-    output.appendChild(errorResult);
+    // output.appendChild(errorResult);
     return;
   }
 
@@ -175,10 +175,10 @@ function runPrediction() {
 
           // Affichage du score dans l'output
           const output = document.getElementById('output');
-          const scoreResult = document.createElement('p');
-          scoreResult.textContent = `${butsEquipeA} - ${butsEquipeB}`;
+          // const scoreResult = document.createElement('p');
+          output.textContent = `Résultat de la prédiction : ${butsEquipeA} - ${butsEquipeB}`;
           // `Score dans le match entre ${equipe1} et ${equipe2} : ${butsEquipeA} - ${butsEquipeB}`
-          output.appendChild(scoreResult);
+          // output.appendChild(scoreResult);
         })
         .catch(error => {
           console.error(error);

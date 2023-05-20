@@ -17,7 +17,8 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 10px;
 }
 
-@media (max-width: 767.98px) { /* Taille md avec Bootstrap */
+@media (max-width: 767.98px) {
+    /* Taille md avec Bootstrap */
     .navbar-nav {
         height: calc(100vh - 80px) !important;
     }
@@ -66,7 +67,7 @@ body {
 
 .bloc {
     border-radius: 10px;
-    margin: 10px;
+    margin: 10px auto;
     box-shadow: #00000030 0 0 10px;
     background-color: white;
 }
@@ -100,63 +101,42 @@ body {
     object-fit: cover;
 }
 
-
-
-
-
-
-
-
-
-  
-  #prediction-joueur, #stat-equipe {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+#prediction-joueur, #stat-equipe {
     gap: 10px;
-    margin: 20px auto;
-    margin-left: 8.8%;
-    width:90%;
-  }
+}
 
-  #prediction-joueur p {
+#prediction-joueur p {
     margin-top: 20px;
     margin-bottom: 10px;
-    line-height: 1.1; 
+    line-height: 1.1;
     font-family: 'Archivo', sans-serif;
-  }
+}
 
-  .tuple {
+.tuple {
     background-color: darkblue;
     color: white;
     padding: 10px;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: default;
     transition: background-color 0.3s;
     width: 200px;
-  }
-  
-  .tuple:hover {
-    background-color: blue;
-  }
-  
-   #loadMoreBtn, #loadMoreEquipeBtn {
-    border-radius: 50%; 
-    width: 50px; 
-    height: 50px; 
-    background-color: red; 
-    color: white; 
-    font-size: 18px; 
-    border: none; 
-  }
+}
 
-  #loadMoreContainer {
+.tuple:hover {
+    background-color: blue;
+}
+
+#loadMoreJoueurBtn, #loadMoreEquipeBtn {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: var(--pariplus_red);
+    color: white;
+    font-size: 18px;
+    border: none;
+}
+
+.loadMoreContainer {
     text-align: center;
     margin-top: 20px;
-  }
-
-
-  
-  
-
-
+}
