@@ -58,8 +58,8 @@ $maxBets = $db->query("SELECT betlimit FROM users WHERE id = $user_id;")->fetch_
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav">
                 <a class="nav-link" href="#">Parier</a>
-                <a class="nav-link" href="#">Statistiques</a>
-                <a class="nav-link" href="#">Prédictions</a>
+                <a class="nav-link" href="../statistiques.html">Statistiques</a>
+                <a class="nav-link" href="../predictions.html">Prédictions</a>
                 <a class="nav-link" href="logout.php">Déconnexion</a>
             </div>
         </div>
@@ -153,8 +153,8 @@ $maxBets = $db->query("SELECT betlimit FROM users WHERE id = $user_id;")->fetch_
             <div class="col-md-3">
                 <div class="row"><a href="../" class="link-secondary">Accueil</a></div>
                 <div class="row"><a href="#" class="link-secondary">Parier</a></div>
-                <div class="row"><a href="#" class="link-secondary">Statistiques</a></div>
-                <div class="row"><a href="#" class="link-secondary">Prédictions</a></div>
+                <div class="row"><a href="../statistiques.html" class="link-secondary">Statistiques</a></div>
+                <div class="row"><a href="../predictions.html" class="link-secondary">Prédictions</a></div>
                 <div class="row"><a href="#" class="link-secondary">A propos de Pariplus</a></div>
             </div>
             <div class="col-md-3">
