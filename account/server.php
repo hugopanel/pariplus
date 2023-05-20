@@ -135,6 +135,43 @@ elseif (isset($_POST['buttonLogin'])) // User authentication
     header('location: ../');
 }
 
+// Account page save settings
+if (isset($_POST['buttonSaveSettings'])) {
+    // Get UserID
+    $username = $_SESSION['username'];
+    $password = $_SESSION['password'];
+    $result = $db->$query("SELECT id FROM users WHERE username = '$username' AND password='$password';")->fetch_assoc();
+    if (!$result) {
+        // User info is incorrect
+        header('location: login/');
+        return;
+    }
+    $user_id = $result['id'];
+
+    // Escape strings
+    $username = mysqli_real_escape_string($db, $_POST['inputUsername']);
+    $password = mysqli_real_escape_string($db, $_POST['inputPassword']);
+    $password_confirm = mysqli_real_escape_string($db, $_POST['inputPasswordConfirm']);
+    $maxBets = mysqli_real_escape_string($db, $_POST['inputMaxBets']);
+
+    // Validate form
+    if (!empty($username)) {
+        // We change the username
+        $db->query("UPDATE users SET username = '$username' WHERE id = $user_id;");
+    }
+    if (!empty($password) && !empty($password_confirm)) {
+        // Check if passwords are the same
+        if ($password != $password_confirm) {
+            $errors[] = "password_noMatch";
+        } else {
+            $password = password_hash($password, PASSWORD_BCRYPT);
+            $db->query("UPDATE users SET password = '$password' WHERE id = $user_id;");
+        }
+    }
+
+    // TODO: Apply bet limit
+}
+
 
 // LOG THE USER IN USING THE TOKEN COOKIE
 function logToken() {

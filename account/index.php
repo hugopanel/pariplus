@@ -58,6 +58,34 @@ if (!isset($_SESSION['username'])) {
                     <h4>Mon compte</h4>
                     Bienvenue <b><?php echo $_SESSION['username']; ?></b> !
                     <br><br>Cette page regroupe les informations et paramètres de votre compte.
+                    <hr>
+                    <form method="POST" action="server.php">
+                        <legend>Paramètres du compte</legend>
+                        <div class="mb-3">
+                            <label for="inputUsername" class="form-label">Nom d'utilisateur</label>
+                            <input type="text" id="inputUsername" name="inputUsername" class="form-control" placeholder="Votre nom">
+                            <p class="text-danger">* Ce nom d'utilisateur est déjà pris.</p>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">Mot de passe</label>
+                            <input type="password" id="inputPassword" name="inputPassword" class="form-control">
+                            <p class="text-danger">* Les mots de passe ne correspondent pas.</p>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPasswordConfirm" class="form-label">Confirmer mot de passe</label>
+                            <input type="password" id="inputPasswordConfirm" name="inputPasswordConfirm" class="form-control">
+                        </div>
+                        <hr>
+                        <legend>Santé et bien-être</legend>
+                        <div class="mb-3">
+                            <label for="inputMaxBets">Limite de paris (EUR)</label>
+                            <input type="number" class="form-control" id="inputMaxBets" name="inputMaxBets" placeholder="0">
+                            <p>&bull; Un montant de 0€ ne fixe aucune limite. </p>
+                            <p class="text-danger">* Le montant est invalide.</p>
+                        </div>
+                        <button type="submit" class="btn btn-primary" name="buttonSaveSettings">Sauvegarder les modifications</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -65,7 +93,19 @@ if (!isset($_SESSION['username'])) {
             <div class="bloc">
                 <div class="bloc-content">
                     <h4>Historique des paris</h4>
-                    Vous n'avez aucun pari enregistré.
+<!--                    Vous n'avez aucun pari enregistré.-->
+                    <div class="card text-bg-success" style="margin-top: 10px">
+                        <div class="card-header">PSG - FCB | 7 - 0</div>
+                        <div class="card-footer">Gagnant : + 370EUR</div>
+                    </div>
+                    <div class="card text-bg-danger" style="margin-top: 10px">
+                        <div class="card-header">PSG - FCB | 0 - 1</div>
+                        <div class="card-footer">Perdant : - 1EUR</div>
+                    </div>
+                    <div class="card text-bg-success" style="margin-top: 10px">
+                        <div class="card-header">PSG - FCB | 7 - 0</div>
+                        <div class="card-footer">Gagnant : + 370EUR</div>
+                    </div>
                 </div>
             </div>
             <div class="bloc">
