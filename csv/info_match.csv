@@ -1,0 +1,126 @@
+Tour,Sem.,Jour,Date,Heure,Domicile,xG,Score,xG,Exterieur,Affluence,Tribune,Arbitre,Rapport de match,Notes
+Group stage,1,Mar,2021-09-14,18:45,Young Boys ch,1.4,2�1,0.5,eng Manchester Utd,31120,Wankdorfstadion,Fran�ois Letexier,Rapport de match,
+Group stage,1,Mar,2021-09-14,21:00,Villarreal es,2.3,2�2,1.3,it Atalanta,12916,Estadio de la Cer�mica,Cl�ment Turpin,Rapport de match,
+Group stage,1,Mar,2021-09-14,18:45,Sevilla es,1.5,1�1,2.9,at RB Salzburg,18373,Estadio Ram�n S�nchez Pizju�n,Aliaksei Kulbakou,Rapport de match,
+Group stage,1,Mar,2021-09-14,21:00,Malm� se,0.4,0�3,3.5,it Juventus,5832,Eleda Stadion,Artur Dias,Rapport de match,
+Group stage,1,Mar,2021-09-14,21:00,Lille fr,1.6,0�0,0.1,de Wolfsburg,34314,Stade Pierre-Mauroy,Danny Makkelie,Rapport de match,
+Group stage,1,Mar,2021-09-14,22:00 (21:00),Dynamo Kyiv ua,0.6,0�0,1.0,pt Benfica,21657,NSK Olimpijs'kyj,Anthony Taylor,Rapport de match,
+Group stage,1,Mar,2021-09-14,20:00 (21:00),Chelsea eng,0.7,1�0,0.9,ru Zenit,39252,Stamford Bridge,Bartosz Frankowski,Rapport de match,
+Group stage,1,Mar,2021-09-14,21:00,Barcelona es,0.2,0�3,2.7,de Bayern Munich,39737,Camp Nou,Michael Oliver,Rapport de match,
+Group stage,1,Mer,2021-09-15,20:00 (21:00),Sporting CP pt,0.7,1�5,3.1,nl Ajax,20382,Est�dio Jos� Alvalade,Jos� S�nchez,Rapport de match,
+Group stage,1,Mer,2021-09-15,19:45 (18:45),Sheriff Tiraspol md,1.0,2�0,0.8,ua Shakhtar,5205,Bolshaya Sportivnaya Arena,Deniz Aytekin,Rapport de match,
+Group stage,1,Mer,2021-09-15,20:00 (21:00),Manchester City eng,2.3,6�3,1.3,de RB Leipzig,38062,Etihad Stadium,Serdar G�z�b�y�k,Rapport de match,
+Group stage,1,Mer,2021-09-15,20:00 (21:00),Liverpool eng,2.5,3�2,1.6,it Milan,51445,Anfield,Szymon Marciniak,Rapport de match,
+Group stage,1,Mer,2021-09-15,21:00,Inter it,2.4,0�1,1.2,es Real Madrid,37082,Stadio Giuseppe Meazza,Daniel Siebert,Rapport de match,
+Group stage,1,Mer,2021-09-15,21:00,Club Brugge be,1.3,1�1,1.4,fr Paris S-G,27546,Jan Breydelstadion,Sandro Sch�rer,Rapport de match,
+Group stage,1,Mer,2021-09-15,19:45 (18:45),Be?ikta? tr,1.2,1�2,3.0,de Dortmund,22445,Vodafone Arena,Antonio Mat�u Lahoz,Rapport de match,
+Group stage,1,Mer,2021-09-15,21:00,Atl�tico Madrid es,0.3,0�0,1.6,pt Porto,40098,Estadio Wanda Metropolitano,Ovidiu Ha?egan,Rapport de match,
+Group stage,2,Mar,2021-09-28,19:45 (18:45),Shakhtar ua,1.3,0�0,1.0,it Inter,26170,NSK Olimpijs'kyj,Istv�n Kov�cs,Rapport de match,
+Group stage,2,Mar,2021-09-28,21:00,Real Madrid es,3.1,1�2,0.4,md Sheriff Tiraspol,24522,Estadio Santiago Bernab�u,Lawrence Visser,Rapport de match,
+Group stage,2,Mar,2021-09-28,21:00,RB Leipzig de,1.3,1�2,1.4,be Club Brugge,23500,Red Bull Arena,Slavko Vin?i?,Rapport de match,
+Group stage,2,Mar,2021-09-28,20:00 (21:00),Porto pt,0.9,1�5,3.4,eng Liverpool,23520,Est�dio Do Drag�o,Sergey Karasev,Rapport de match,
+Group stage,2,Mar,2021-09-28,21:00,Paris S-G fr,0.4,2�0,1.9,eng Manchester City,37350,Parc des Princes,Carlos del Cerro,Rapport de match,
+Group stage,2,Mar,2021-09-28,21:00,Milan it,0.7,1�2,2.1,es Atl�tico Madrid,35374,Stadio Giuseppe Meazza,C�neyt �ak?r,Rapport de match,
+Group stage,2,Mar,2021-09-28,21:00,Dortmund de,0.3,1�0,0.4,pt Sporting CP,25000,Signal Iduna Park,Srdjan Stojanovic,Rapport de match,
+Group stage,2,Mar,2021-09-28,18:45,Ajax nl,3.5,2�0,0.9,tr Be?ikta?,52628,Johan Cruyff ArenA,Beno�t Bastien,Rapport de match,
+Group stage,2,Mer,2021-09-29,19:45 (18:45),Zenit ru,2.5,4�0,0.5,se Malm�,15339,Gazprom Arena,Anastasios Sidiropoulos,Rapport de match,
+Group stage,2,Mer,2021-09-29,21:00,Wolfsburg de,1.2,1�1,1.1,es Sevilla,11733,Volkswagen Arena,Georgi Kabakov,Rapport de match,
+Group stage,2,Mer,2021-09-29,21:00,RB Salzburg at,2.1,2�1,0.5,fr Lille,24207,Red Bull Arena,Halil Umut Meler,Rapport de match,
+Group stage,2,Mer,2021-09-29,20:00 (21:00),Manchester Utd eng,1.1,2�1,2.3,es Villarreal,73130,Old Trafford,Felix Zwayer,Rapport de match,
+Group stage,2,Mer,2021-09-29,21:00,Juventus it,0.9,1�0,1.3,eng Chelsea,19934,Allianz Stadium,Jes�s Gil,Rapport de match,
+Group stage,2,Mer,2021-09-29,20:00 (21:00),Benfica pt,1.9,3�0,1.2,es Barcelona,29454,Est�dio do Sport Lisboa e Benfica,Daniele Orsato,Rapport de match,
+Group stage,2,Mer,2021-09-29,21:00,Bayern Munich de,2.7,5�0,0.3,ua Dynamo Kyiv,25000,Allianz Arena,Marco Guida,Rapport de match,
+Group stage,2,Mer,2021-09-29,18:45,Atalanta it,2.5,1�0,0.1,ch Young Boys,8536,Stadio Atleti Azzurri d'Italia,Felix Brych,Rapport de match,
+Group stage,3,Mar,2021-10-19,22:00 (21:00),Shakhtar ua,0.7,0�5,2.6,es Real Madrid,34037,Oblasny SportKomplex Metalist,Sr?an Jovanovi?,Rapport de match,
+Group stage,3,Mar,2021-10-19,20:00 (21:00),Porto pt,1.1,1�0,0.2,it Milan,32130,Est�dio Do Drag�o,Felix Brych,Rapport de match,
+Group stage,3,Mar,2021-10-19,21:00,Paris S-G fr,3.0,3�2,2.1,de RB Leipzig,47359,Parc des Princes,Marco Guida,Rapport de match,
+Group stage,3,Mar,2021-10-19,21:00,Inter it,2.3,3�1,0.4,md Sheriff Tiraspol,43305,Stadio Giuseppe Meazza,Danny Makkelie,Rapport de match,
+Group stage,3,Mar,2021-10-19,18:45,Club Brugge be,0.6,1�5,4.7,eng Manchester City,24915,Jan Breydelstadion,Istv�n Kov�cs,Rapport de match,
+Group stage,3,Mar,2021-10-19,19:45 (18:45),Be?ikta? tr,0.9,1�4,4.4,pt Sporting CP,22936,Vodafone Arena,Slavko Vin?i?,Rapport de match,
+Group stage,3,Mar,2021-10-19,21:00,Atl�tico Madrid es,2.2,2�3,1.3,eng Liverpool,60725,Estadio Wanda Metropolitano,Daniel Siebert,Rapport de match,
+Group stage,3,Mar,2021-10-19,21:00,Ajax nl,2.1,4�0,1.2,de Dortmund,54029,Johan Cruyff ArenA,Jes�s Gil,Rapport de match,
+Group stage,3,Mer,2021-10-20,22:00 (21:00),Zenit ru,0.6,0�1,1.2,it Juventus,18717,Gazprom Arena,Sandro Sch�rer,Rapport de match,
+Group stage,3,Mer,2021-10-20,21:00,Young Boys ch,2.7,1�4,2.7,es Villarreal,27398,Wankdorfstadion,Sergey Karasev,Rapport de match,
+Group stage,3,Mer,2021-10-20,18:45,RB Salzburg at,2.7,3�1,0.9,de Wolfsburg,29520,Red Bull Arena,Daniele Orsato,Rapport de match,
+Group stage,3,Mer,2021-10-20,20:00 (21:00),Manchester Utd eng,2.8,3�2,1.6,it Atalanta,72279,Old Trafford,Szymon Marciniak,Rapport de match,
+Group stage,3,Mer,2021-10-20,21:00,Lille fr,0.8,0�0,1.1,es Sevilla,34362,Stade Pierre-Mauroy,Michael Oliver,Rapport de match,
+Group stage,3,Mer,2021-10-20,20:00 (21:00),Chelsea eng,2.6,4�0,0.1,se Malm�,39095,Stamford Bridge,Fran�ois Letexier,Rapport de match,
+Group stage,3,Mer,2021-10-20,20:00 (21:00),Benfica pt,0.7,0�4,3.0,de Bayern Munich,55201,Est�dio do Sport Lisboa e Benfica,Ovidiu Ha?egan,Rapport de match,
+Group stage,3,Mer,2021-10-20,18:45,Barcelona es,2.2,1�0,0.1,ua Dynamo Kyiv,45968,Camp Nou,Cl�ment Turpin,Rapport de match,
+Group stage,4,Mar,2021-11-02,18:45,Wolfsburg de,1.7,2�1,1.6,at RB Salzburg,16112,Volkswagen Arena,Artur Dias,Rapport de match,
+Group stage,4,Mar,2021-11-02,21:00,Villarreal es,2.2,2�0,1.1,ch Young Boys,14890,Estadio de la Cer�mica,Serdar G�z�b�y�k,Rapport de match,
+Group stage,4,Mar,2021-11-02,21:00,Sevilla es,1.0,1�2,1.9,fr Lille,29369,Estadio Ram�n S�nchez Pizju�n,Istv�n Kov�cs,Rapport de match,
+Group stage,4,Mar,2021-11-02,18:45,Malm� se,0.2,0�1,2.5,eng Chelsea,19551,Eleda Stadion,Felix Brych,Rapport de match,
+Group stage,4,Mar,2021-11-02,21:00,Juventus it,2.7,4�2,1.3,ru Zenit,20053,Allianz Stadium,Alejandro Hern�ndez,Rapport de match,
+Group stage,4,Mar,2021-11-02,22:00 (21:00),Dynamo Kyiv ua,1.0,0�1,0.8,es Barcelona,31378,NSK Olimpijs'kyj,Ovidiu Ha?egan,Rapport de match,
+Group stage,4,Mar,2021-11-02,21:00,Bayern Munich de,4.8,5�2,1.0,pt Benfica,50000,Allianz Arena,Szymon Marciniak,Rapport de match,
+Group stage,4,Mar,2021-11-02,21:00,Atalanta it,1.5,2�2,1.1,eng Manchester Utd,14443,Stadio Atleti Azzurri d'Italia,Slavko Vin?i?,Rapport de match,
+Group stage,4,Mer,2021-11-03,20:00 (21:00),Sporting CP pt,2.7,4�0,1.1,tr Be?ikta?,40835,Est�dio Jos� Alvalade,Sergey Karasev,Rapport de match,
+Group stage,4,Mer,2021-11-03,22:00 (21:00),Sheriff Tiraspol md,0.3,1�3,2.5,it Inter,5930,Bolshaya Sportivnaya Arena,Felix Zwayer,Rapport de match,
+Group stage,4,Mer,2021-11-03,18:45,Real Madrid es,2.0,2�1,1.3,ua Shakhtar,38105,Estadio Santiago Bernab�u,Beno�t Bastien,Rapport de match,
+Group stage,4,Mer,2021-11-03,21:00,RB Leipzig de,3.3,2�2,2.1,fr Paris S-G,39794,Red Bull Arena,Andreas Ekberg,Rapport de match,
+Group stage,4,Mer,2021-11-03,18:45,Milan it,0.6,1�1,1.8,pt Porto,39675,Stadio Giuseppe Meazza,Cl�ment Turpin,Rapport de match,
+Group stage,4,Mer,2021-11-03,20:00 (21:00),Manchester City eng,4.6,4�1,0.8,be Club Brugge,50228,Etihad Stadium,Antonio Mat�u Lahoz,Rapport de match,
+Group stage,4,Mer,2021-11-03,20:00 (21:00),Liverpool eng,3.0,2�0,0.2,es Atl�tico Madrid,51347,Anfield,Danny Makkelie,Rapport de match,
+Group stage,4,Mer,2021-11-03,21:00,Dortmund de,1.7,1�3,2.0,nl Ajax,54820,Signal Iduna Park,Michael Oliver,Rapport de match,
+Group stage,5,Mar,2021-11-23,21:00,Young Boys ch,0.7,3�3,1.2,it Atalanta,31120,Stade de Suisse Wankdorf Bern,Daniel Siebert,Rapport de match,
+Group stage,5,Mar,2021-11-23,18:45,Villarreal es,0.6,0�2,1.2,eng Manchester Utd,20875,Estadio de la Cer�mica,Felix Brych,Rapport de match,
+Group stage,5,Mar,2021-11-23,21:00,Sevilla es,1.6,2�0,0.3,de Wolfsburg,28663,Estadio Ram�n S�nchez Pizju�n,C�neyt �ak?r,Rapport de match,
+Group stage,5,Mar,2021-11-23,21:00,Malm� se,0.2,1�1,1.9,ru Zenit,15520,Eleda Stadion,Andris Treimanis,Rapport de match,
+Group stage,5,Mar,2021-11-23,21:00,Lille fr,0.7,1�0,0.5,at RB Salzburg,33573,Stade Pierre-Mauroy,Anthony Taylor,Rapport de match,
+Group stage,5,Mar,2021-11-23,19:45 (18:45),Dynamo Kyiv ua,1.1,1�2,1.0,de Bayern Munich,28732,NSK Olimpijs'kyj,Halil Umut Meler,Rapport de match,
+Group stage,5,Mar,2021-11-23,20:00 (21:00),Chelsea eng,3.0,4�0,0.7,it Juventus,39513,Stamford Bridge,Sr?an Jovanovi?,Rapport de match,
+Group stage,5,Mar,2021-11-23,21:00,Barcelona es,1.4,0�0,1.2,pt Benfica,49572,Camp Nou,Sergey Karasev,Rapport de match,
+Group stage,5,Mer,2021-11-24,20:00 (21:00),Sporting CP pt,1.9,3�1,1.6,de Dortmund,41341,Est�dio Jos� Alvalade,Carlos del Cerro,Rapport de match,
+Group stage,5,Mer,2021-11-24,22:00 (21:00),Sheriff Tiraspol md,1.4,0�3,1.5,es Real Madrid,5932,Bolshaya Sportivnaya Arena,Szymon Marciniak,Rapport de match,
+Group stage,5,Mer,2021-11-24,20:00 (21:00),Manchester City eng,2.1,2�1,1.0,fr Paris S-G,52030,Etihad Stadium,Daniele Orsato,Rapport de match,
+Group stage,5,Mer,2021-11-24,20:00 (21:00),Liverpool eng,0.6,2�0,1.1,pt Porto,52209,Anfield,Felix Zwayer,Rapport de match,
+Group stage,5,Mer,2021-11-24,18:45,Inter it,2.6,2�0,0.6,ua Shakhtar,46225,Stadio Giuseppe Meazza,Ovidiu Ha?egan,Rapport de match,
+Group stage,5,Mer,2021-11-24,21:00,Club Brugge be,0.9,0�5,3.8,de RB Leipzig,24072,Jan Breydelstadion,Davide Massa,Rapport de match,
+Group stage,5,Mer,2021-11-24,20:45 (18:45),Be?ikta? tr,1.9,1�2,2.5,nl Ajax,11712,Vodafone Arena,Irfan Peljto,Rapport de match,
+Group stage,5,Mer,2021-11-24,21:00,Atl�tico Madrid es,0.9,0�1,1.3,it Milan,61019,Estadio Wanda Metropolitano,Slavko Vin?i?,Rapport de match,
+Group stage,6,Mar,2021-12-07,22:00 (21:00),Shakhtar ua,2.0,1�1,1.0,md Sheriff Tiraspol,6841,Oblasny SportKomplex Metalist,Donatas Rum�as,Rapport de match,
+Group stage,6,Mar,2021-12-07,21:00,Real Madrid es,1.2,2�0,0.9,it Inter,44887,Estadio Santiago Bernab�u,Felix Brych,Rapport de match,
+Group stage,6,Mar,2021-12-07,18:45,RB Leipzig de,1.7,2�1,1.2,eng Manchester City,,Red Bull Arena,Sandro Sch�rer,Rapport de match,
+Group stage,6,Mar,2021-12-07,20:00 (21:00),Porto pt,1.6,1�3,3.7,es Atl�tico Madrid,38830,Est�dio Do Drag�o,Cl�ment Turpin,Rapport de match,
+Group stage,6,Mar,2021-12-07,18:45,Paris S-G fr,3.6,4�1,1.1,be Club Brugge,47492,Parc des Princes,Jes�s Gil,Rapport de match,
+Group stage,6,Mar,2021-12-07,21:00,Milan it,1.4,1�2,1.9,eng Liverpool,56237,Stadio Giuseppe Meazza,Danny Makkelie,Rapport de match,
+Group stage,6,Mar,2021-12-07,21:00,Dortmund de,3.5,5�0,0.1,tr Be?ikta?,15000,Signal Iduna Park,Fran�ois Letexier,Rapport de match,
+Group stage,6,Mar,2021-12-07,21:00,Ajax nl,2.1,4�2,1.2,pt Sporting CP,,Johan Cruyff ArenA,Davide Massa,Rapport de match,
+Group stage,6,Mer,2021-12-08,20:45 (18:45),Zenit ru,2.6,3�3,2.7,eng Chelsea,29349,Gazprom Arena,Serdar G�z�b�y�k,Rapport de match,
+Group stage,6,Mer,2021-12-08,21:00,Wolfsburg de,0.7,1�3,2.5,fr Lille,6544,Volkswagen Arena,Daniele Orsato,Rapport de match,
+Group stage,6,Mer,2021-12-08,21:00,RB Salzburg at,0.6,1�0,0.9,es Sevilla,,Red Bull Arena,Slavko Vin?i?,Rapport de match,
+Group stage,6,Mer,2021-12-08,20:00 (21:00),Manchester Utd eng,1.2,1�1,1.3,ch Young Boys,73156,Old Trafford,Beno�t Bastien,Rapport de match,
+Group stage,6,Mer,2021-12-08,18:45,Juventus it,2.1,1�0,0.2,se Malm�,17501,Allianz Stadium,Irfan Peljto,Rapport de match,
+Group stage,6,Mer,2021-12-08,20:00 (21:00),Benfica pt,1.1,2�0,1.0,ua Dynamo Kyiv,36591,Est�dio do Sport Lisboa e Benfica,Deniz Aytekin,Rapport de match,
+Group stage,6,Mer,2021-12-08,21:00,Bayern Munich de,2.4,3�0,0.4,es Barcelona,,Allianz Arena,Ovidiu Ha?egan,Rapport de match,
+Group stage,6,Jeu,2021-12-09,19:00,Atalanta it,2.0,2�3,2.2,es Villarreal,11690,Stadio Atleti Azzurri d'Italia,Anthony Taylor,Rapport de match,
+Round of 16,,Mar,2022-02-15,20:00 (21:00),Sporting CP pt,0.1,0�5,2.1,eng Manchester City,48129,Est�dio Jos� Alvalade,Srdjan Stojanovic,Rapport de match,�tape 1 sur 2
+Round of 16,,Mar,2022-02-15,21:00,Paris S-G fr,2.4,1�0,0.3,es Real Madrid,47443,Parc des Princes,Daniele Orsato,Rapport de match,�tape 1 sur 2
+Round of 16,,Mer,2022-02-16,21:00,RB Salzburg at,1.1,1�1,2.3,de Bayern Munich,29520,Red Bull Arena,Michael Oliver,Rapport de match,�tape 1 sur 2
+Round of 16,,Mer,2022-02-16,21:00,Inter it,0.6,0�2,1.0,eng Liverpool,37918,Stadio Giuseppe Meazza,Szymon Marciniak,Rapport de match,�tape 1 sur 2
+Round of 16,,Mar,2022-02-22,21:00,Villarreal es,1.3,1�1,0.7,it Juventus,17686,Estadio de la Cer�mica,Daniel Siebert,Rapport de match,�tape 1 sur 2
+Round of 16,,Mar,2022-02-22,20:00 (21:00),Chelsea eng,1.2,2�0,0.8,fr Lille,38832,Stamford Bridge,Jes�s Gil,Rapport de match,�tape 1 sur 2
+Round of 16,,Mer,2022-02-23,20:00 (21:00),Benfica pt,2.0,2�2,2.4,nl Ajax,54760,Est�dio do Sport Lisboa e Benfica,Slavko Vin?i?,Rapport de match,�tape 1 sur 2
+Round of 16,,Mer,2022-02-23,21:00,Atl�tico Madrid es,1.3,1�1,0.6,eng Manchester Utd,63273,Estadio Wanda Metropolitano,Ovidiu Ha?egan,Rapport de match,�tape 1 sur 2
+"Round of 16,,Mar,2022-03-08,20:00 (21:00),Liverpool eng,1.8,0�1,0.5,it Inter,51747,Anfield,Antonio Mat�u Lahoz,Rapport de match,�tape 2 sur 2; Liverpool a gagn�"
+"Round of 16,,Mar,2022-03-08,21:00,Bayern Munich de,4.2,7�1,0.7,at RB Salzburg,25000,Allianz Arena,Cl�ment Turpin,Rapport de match,�tape 2 sur 2; Bayern Munich a gagn�"
+"Round of 16,,Mer,2022-03-09,21:00,Real Madrid es,1.9,3�1,1.1,fr Paris S-G,59895,Estadio Santiago Bernab�u,Danny Makkelie,Rapport de match,�tape 2 sur 2; Real Madrid a gagn�"
+"Round of 16,,Mer,2022-03-09,20:00 (21:00),Manchester City eng,1.5,0�0,0.8,pt Sporting CP,51213,Etihad Stadium,Halil Umut Meler,Rapport de match,�tape 2 sur 2; Manchester City a gagn�"
+"Round of 16,,Mar,2022-03-15,20:00 (21:00),Manchester Utd eng,1.0,0�1,0.5,es Atl�tico Madrid,73008,Old Trafford,Slavko Vin?i?,Rapport de match,�tape 2 sur 2; Atl�tico Madrid a gagn�"
+"Round of 16,,Mar,2022-03-15,21:00,Ajax nl,1.3,0�1,0.4,pt Benfica,54066,Johan Cruyff ArenA,Carlos del Cerro,Rapport de match,�tape 2 sur 2; Benfica a gagn�"
+"Round of 16,,Mer,2022-03-16,21:00,Lille fr,1.7,1�2,1.0,eng Chelsea,49048,Stade Pierre-Mauroy,Davide Massa,Rapport de match,�tape 2 sur 2; Chelsea a gagn�"
+"Round of 16,,Mer,2022-03-16,21:00,Juventus it,1.5,0�3,2.5,es Villarreal,30385,Allianz Stadium,Szymon Marciniak,Rapport de match,�tape 2 sur 2; Villarreal a gagn�"
+Quarter-finals,,Mar,2022-04-05,20:00 (21:00),Manchester City eng,1.0,1�0,0.0,es Atl�tico Madrid,52018,Etihad Stadium,Istv�n Kov�cs,Rapport de match,�tape 1 sur 2
+Quarter-finals,,Mar,2022-04-05,20:00 (21:00),Benfica pt,1.2,1�3,3.9,eng Liverpool,59633,Est�dio do Sport Lisboa e Benfica,Jes�s Gil,Rapport de match,�tape 1 sur 2
+Quarter-finals,,Mer,2022-04-06,21:00,Villarreal es,1.5,1�0,1.6,de Bayern Munich,21626,Estadio de la Cer�mica,Anthony Taylor,Rapport de match,�tape 1 sur 2
+Quarter-finals,,Mer,2022-04-06,20:00 (21:00),Chelsea eng,1.3,1�3,1.8,es Real Madrid,38689,Stamford Bridge,Cl�ment Turpin,Rapport de match,�tape 1 sur 2
+"Quarter-finals,,Mar,2022-04-12,21:00,Real Madrid es,1.2,2�3,2.7,eng Chelsea,59839,Estadio Santiago Bernab�u,Szymon Marciniak,Rapport de match,�tape 2 sur 2; Real Madrid a gagn�; Prolongations n�cessaires"
+"Quarter-finals,,Mar,2022-04-12,21:00,Bayern Munich de,1.4,1�1,0.7,es Villarreal,70000,Allianz Arena,Slavko Vin?i?,Rapport de match,�tape 2 sur 2; Villarreal a gagn�"
+"Quarter-finals,,Mer,2022-04-13,20:00 (21:00),Liverpool eng,1.8,3�3,1.2,pt Benfica,51373,Anfield,Serdar G�z�b�y�k,Rapport de match,�tape 2 sur 2; Liverpool a gagn�"
+"Quarter-finals,,Mer,2022-04-13,21:00,Atl�tico Madrid es,0.8,0�0,1.2,eng Manchester City,65675,Estadio Wanda Metropolitano,Daniel Siebert,Rapport de match,�tape 2 sur 2; Manchester City a gagn�"
+Semi-finals,,Mar,2022-04-26,20:00 (21:00),Manchester City eng,2.7,4�3,1.6,es Real Madrid,52217,Etihad Stadium,Istv�n Kov�cs,Rapport de match,�tape 1 sur 2
+Semi-finals,,Mer,2022-04-27,20:00 (21:00),Liverpool eng,1.6,2�0,0.1,es Villarreal,51586,Anfield,Szymon Marciniak,Rapport de match,�tape 1 sur 2
+"Semi-finals,,Mar,2022-05-03,21:00,Villarreal es,1.2,2�3,2.5,eng Liverpool,23665,Estadio de la Cer�mica,Danny Makkelie,Rapport de match,�tape 2 sur 2; Liverpool a gagn�"
+"Semi-finals,,Mer,2022-05-04,21:00,Real Madrid es,2.3,3�1,1.4,eng Manchester City,61416,Estadio Santiago Bernab�u,Daniele Orsato,Rapport de match,�tape 2 sur 2; Real Madrid a gagn�; Prolongations n�cessaires"
+Final,,Sam,2022-05-28,21:30,Liverpool eng,2.2,0�1,0.9,es Real Madrid,75000,Stade de France (Terrain neutre),Cl�ment Turpin,Rapport de match,
