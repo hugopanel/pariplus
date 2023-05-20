@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 
 require_once dirname(__DIR__) . '/db.php';
@@ -133,6 +137,60 @@ elseif (isset($_POST['buttonLogin'])) // User authentication
 
     // Redirect the user to his account page
     header('location: ../');
+}
+
+// Account page save settings
+if (isset($_POST['buttonSaveSettings'])) {
+    // Get UserID
+    $username = $_SESSION['username'];
+    $password = $_SESSION['password'];
+    $result = $db->query("SELECT id FROM users WHERE username = '$username' AND password='$password';")->fetch_assoc();
+    if (!$result) {
+        // User info is incorrect
+        header('location: login/');
+        return;
+    }
+    $user_id = $result['id'];
+
+    // Escape strings
+    $username = mysqli_real_escape_string($db, $_POST['inputUsername']);
+    $password = mysqli_real_escape_string($db, $_POST['inputPassword']);
+    $password_confirm = mysqli_real_escape_string($db, $_POST['inputPasswordConfirm']);
+    $maxBets = mysqli_real_escape_string($db, $_POST['inputMaxBets']);
+
+    // Validate form
+    if (!empty($username)) {
+        // We change the username
+        $result = $db->query("SELECT * FROM users WHERE username = '$username';");
+        if ($result->num_rows != 0) {
+            $errors[] = "username_taken";
+            return;
+        }
+        $db->query("UPDATE users SET username = '$username' WHERE id = $user_id;");
+        $_SESSION['username'] = $username;
+    }
+
+    if (!empty($password) && !empty($password_confirm)) {
+        // Check if passwords are the same
+        if ($password != $password_confirm) {
+            $errors[] = "password_noMatch";
+        } else {
+            $password = password_hash($password, PASSWORD_BCRYPT);
+            $db->query("UPDATE users SET password = '$password' WHERE id = $user_id;");
+            $_SESSION['password'] = $password;
+        }
+    }
+
+    if (!empty($maxBets) || $maxBets === "0") {
+        if (!is_numeric($maxBets)) {
+            $errors[] = "maxBets_illegal_value";
+            return;
+        }
+
+        if ($maxBets <= 0) $maxBets = 0;
+
+        $db->query("UPDATE users SET betlimit = $maxBets WHERE id = $user_id;");
+    }
 }
 
 

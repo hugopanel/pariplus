@@ -1,6 +1,7 @@
 <?php
 
 require_once "server.php";
+global $db;
 
 session_start();
 
@@ -14,6 +15,20 @@ if (!isset($_SESSION['username'])) {
         header('location: login/');
     }
 }
+
+// Get user info
+$username = $_SESSION['username'];
+$password = $_SESSION['password'];
+$result = $db->query("SELECT id FROM users WHERE username = '$username' AND password = '$password';")->fetch_assoc();
+if (!$result) {
+    // User info is incorrect
+    header('location: login/');
+    die;
+}
+
+$user_id = $result['id'];
+
+$maxBets = $db->query("SELECT betlimit FROM users WHERE id = $user_id;")->fetch_assoc()['betlimit'];
 
 ?>
 
@@ -43,8 +58,8 @@ if (!isset($_SESSION['username'])) {
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav">
                 <a class="nav-link" href="#">Parier</a>
-                <a class="nav-link" href="#">Statistiques</a>
-                <a class="nav-link" href="#">Prédictions</a>
+                <a class="nav-link" href="../statistiques.html">Statistiques</a>
+                <a class="nav-link" href="../predictions.html">Prédictions</a>
                 <a class="nav-link" href="logout.php">Déconnexion</a>
             </div>
         </div>
@@ -56,8 +71,48 @@ if (!isset($_SESSION['username'])) {
             <div class="bloc">
                 <div class="bloc-content">
                     <h4>Mon compte</h4>
-                    Bienvenue <b><?php echo $_SESSION['username']; ?></b> !
+                    Bienvenue <b><?php echo $username; ?></b> !
                     <br><br>Cette page regroupe les informations et paramètres de votre compte.
+                    <hr>
+                    <form method="POST" action="index.php">
+                        <legend>Paramètres du compte</legend>
+                        <div class="mb-3">
+                            <label for="inputUsername" class="form-label">Nom d'utilisateur</label>
+                            <input type="text" id="inputUsername" name="inputUsername" class="form-control" placeholder="<?php echo $username ?>">
+                            <?php
+                            if (isset($errors))
+                                if (in_array("username_taken", $errors))
+                                    echo "<p class=\"text-danger\">* Ce nom d'utilisateur est déjà pris.</p>";
+                            ?>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">Mot de passe</label>
+                            <input type="password" id="inputPassword" name="inputPassword" class="form-control">
+                            <?php
+                            if (isset($errors))
+                                if (in_array("password_noMatch", $errors))
+                                    echo "<p class=\"text-danger\">* Les mots de passe ne correspondent pas.</p>";
+                            ?>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPasswordConfirm" class="form-label">Confirmer mot de passe</label>
+                            <input type="password" id="inputPasswordConfirm" name="inputPasswordConfirm" class="form-control">
+                        </div>
+                        <hr>
+                        <legend>Santé et bien-être</legend>
+                        <div class="mb-3">
+                            <label for="inputMaxBets">Limite de paris (EUR)</label>
+                            <input type="number" class="form-control" id="inputMaxBets" name="inputMaxBets" placeholder="<?php echo $maxBets; ?>">
+                            <p>&bull; Un montant de 0€ ne fixe aucune limite. </p>
+                            <?php
+                            if (isset($errors))
+                                if (in_array("maxBets_illegal_value", $errors))
+                                    echo "<p class=\"text-danger\">* Le montant est invalide.</p>";
+                            ?>
+                        </div>
+                        <button type="submit" class="btn btn-primary" name="buttonSaveSettings">Sauvegarder les modifications</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -65,7 +120,19 @@ if (!isset($_SESSION['username'])) {
             <div class="bloc">
                 <div class="bloc-content">
                     <h4>Historique des paris</h4>
-                    Vous n'avez aucun pari enregistré.
+<!--                    Vous n'avez aucun pari enregistré.-->
+                    <div class="card text-bg-success" style="margin-top: 10px">
+                        <div class="card-header">PSG - FCB | 7 - 0</div>
+                        <div class="card-footer">Gagnant : + 370EUR</div>
+                    </div>
+                    <div class="card text-bg-danger" style="margin-top: 10px">
+                        <div class="card-header">PSG - FCB | 0 - 1</div>
+                        <div class="card-footer">Perdant : - 1EUR</div>
+                    </div>
+                    <div class="card text-bg-success" style="margin-top: 10px">
+                        <div class="card-header">PSG - FCB | 7 - 0</div>
+                        <div class="card-footer">Gagnant : + 370EUR</div>
+                    </div>
                 </div>
             </div>
             <div class="bloc">
@@ -86,8 +153,8 @@ if (!isset($_SESSION['username'])) {
             <div class="col-md-3">
                 <div class="row"><a href="../" class="link-secondary">Accueil</a></div>
                 <div class="row"><a href="#" class="link-secondary">Parier</a></div>
-                <div class="row"><a href="#" class="link-secondary">Statistiques</a></div>
-                <div class="row"><a href="#" class="link-secondary">Prédictions</a></div>
+                <div class="row"><a href="../statistiques.html" class="link-secondary">Statistiques</a></div>
+                <div class="row"><a href="../predictions.html" class="link-secondary">Prédictions</a></div>
                 <div class="row"><a href="#" class="link-secondary">A propos de Pariplus</a></div>
             </div>
             <div class="col-md-3">
