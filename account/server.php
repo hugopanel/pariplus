@@ -157,6 +157,11 @@ if (isset($_POST['buttonSaveSettings'])) {
     // Validate form
     if (!empty($username)) {
         // We change the username
+        $result = $db->query("SELECT * FROM users WHERE username = '$username';");
+        if ($result) {
+            $errors[] = "username_taken";
+            return;
+        }
         $db->query("UPDATE users SET username = '$username' WHERE id = $user_id;");
     }
     if (!empty($password) && !empty($password_confirm)) {
@@ -169,7 +174,16 @@ if (isset($_POST['buttonSaveSettings'])) {
         }
     }
 
-    // TODO: Apply bet limit
+    if (!empty($maxBets)) {
+        if (!is_float($maxBets)) {
+            $errors[] = "maxBets_illegal_value";
+            return;
+        }
+
+        if ($maxBets < 0) $maxBets = 0;
+
+        $db->query("UPDATE users SET betlimit = $maxBets WHERE id = $user_id;");
+    }
 }
 
 
