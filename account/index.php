@@ -28,6 +28,8 @@ if (!$result) {
 
 $user_id = $result['id'];
 
+$maxBets = $db->query("SELECT betlimit FROM users WHERE id = $user_id;")->fetch_assoc()['betlimit'];
+
 ?>
 
 <!DOCTYPE html>
@@ -101,7 +103,7 @@ $user_id = $result['id'];
                         <legend>Santé et bien-être</legend>
                         <div class="mb-3">
                             <label for="inputMaxBets">Limite de paris (EUR)</label>
-                            <input type="number" class="form-control" id="inputMaxBets" name="inputMaxBets" placeholder="0">
+                            <input type="number" class="form-control" id="inputMaxBets" name="inputMaxBets" placeholder="<?php echo $maxBets; ?>">
                             <p>&bull; Un montant de 0€ ne fixe aucune limite. </p>
                             <?php
                             if (isset($errors))
