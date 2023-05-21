@@ -1,0 +1,203 @@
+<?php
+
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PariPlus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../pariplus.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: var(--pariplus_red); padding: 0 10px 0 10px;">
+    <div class="container">
+        <a class="navbar-brand" href="../">
+            <img src="../assets/img/pariplus_logo_white.svg" alt="PariPlus" height="70" style="max-height: 70px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
+            <i class="bi bi-list" style="display: inline-block; font-size: 1.5em; color: white;"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav">
+                <a class="nav-link" href="#">Parier</a>
+                <a class="nav-link" href="../statistiques.html">Statistiques</a>
+                <a class="nav-link" href="../predictions.html">Prédictions</a>
+                <a class="nav-link" href="../account/">Mon Compte</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" style="margin-top: 80px;">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="bloc">
+                <div class="bloc-content">
+                    <h1>Effectuer un pari</h1>
+                    Rendez-vous sur les pages Statistiques et Prédictions pour bénéficier de nos outils avancés !<br>
+                    Si vous gagnez, vous obtenez le montant de votre mise.<br>
+                    Commencez par choisir un match puis un type de pari :
+
+                    <br><br>
+
+                    <form action="index.php" method="POST">
+                        <div class="mb-3">
+                            <label for="selectTeam1" class="form-label">Equipe 1</label>
+                            <select id="selectTeam1" name="selectTeam1" class="form-select">
+
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="selectTeam2" class="form-label">Equipe 2</label>
+                            <select id="selectTeam2" name="selectTeam2" class="form-select">
+
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputDate">Date du match</label>
+                            <input type="date" class="form-control" id="inputDate" name="inputDate">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputAmount">Montant de la mise (EUR)</label>
+                            <input type="number" class="form-control" id="inputAmount" name="inputAmount" value="10">
+                        </div>
+
+                        <div class="accordion" id="accordionParis">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#score" aria-expanded="true" aria-controls="score">
+                                        Score exact
+                                    </button>
+                                </h2>
+                                <div id="score" class="accordion-collapse collapse show" data-bs-parent="#accordionParis">
+                                    <div class="accordion-body">
+                                        Remplissez les deux champs si vous souhaitez parier un score exact, ou un seul
+                                        des deux si vous souhaitez faire un pari sur un seul club.<br><br>
+                                        <div class="mb-3">
+                                            <label for="inputScoreTeam1" class="form-label">Score équipe 1</label>
+                                            <input type="number" id="inputScoreTeam1" name="inputScoreTeam1" class="form-control" placeholder="Ne rien parier...">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="inputScoreTeam2" class="form-label">Score équipe 2</label>
+                                            <input type="number" id="inputScoreTeam2" name="inputScoreTeam2" class="form-control" placeholder="Ne rien parier...">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" name="buttonScore">Parier</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#victoireClub" aria-expanded="false" aria-controls="victoireClub">
+                                        Victoire d'un club
+                                    </button>
+                                </h2>
+                                <div id="victoireClub" class="accordion-collapse collapse" data-bs-parent="#accordionParis">
+                                    <div class="accordion-body">
+                                        Sélectionner un club sur lequel parier la victoire : <br><br>
+                                        <div class="mb-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioTeam1" id="radioTeam1" checked>
+                                                <label class="form-check-label" for="radioTeam1">
+                                                    Equipe 1
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioTeam2" id="radioTeam2">
+                                                <label class="form-check-label" for="radioTeam2">
+                                                    Equipe 2
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" name="buttonVictoireClub">Parier</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nbButsTotal" aria-expanded="false" aria-controls="nbButsTotal">
+                                        Nombre de buts au total dans le match
+                                    </button>
+                                </h2>
+                                <div id="nbButsTotal" class="accordion-collapse collapse" data-bs-parent="#accordionParis">
+                                    <div class="accordion-body">
+                                        Sélectionnez un nombre total de but mis pendant le match (toutes équipes confondues) :<br><br>
+                                        <div class="mb-3">
+                                            <label for="inputButsTotal" class="form-label">Nombre total de buts</label>
+                                            <input type="number" id="inputButsTotal" name="inputButsTotal" class="form-control" value="0">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" name="buttonButsTotal">Parier</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ecartButs" aria-expanded="false" aria-controls="ecartButs">
+                                        Ecart de buts entre deux clubs
+                                    </button>
+                                </h2>
+                                <div id="ecartButs" class="accordion-collapse collapse" data-bs-parent="#accordionParis">
+                                    <div class="accordion-body">
+                                        Pariez sur un écart entre les scores de chaque équipe :<br><br>
+                                        <div class="mb-3">
+                                            <label for="inputEcart" class="form-label">Ecart de buts</label>
+                                            <input type="number" id="inputEcart" name="inputEcart" class="form-control" value="0">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" name="buttonEcart">Parier</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="alert alert-danger" style="margin-top: 20px; margin-bottom: 0;">
+                        Attention ! Une fois un pari lancé, vous ne pouvez plus l'annuler !
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="bloc">
+                <div class="bloc-content">
+                    <h4>VOTRE PARI</h4>
+                    Connectez-vous pour voir votre pari.
+                </div>
+            </div>
+            <div class="bloc">
+                <img class="bloc-ad d-sm-block d-none" src="../assets/img/Wilhem%20Motors.jpg" alt="Publicité">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer text-secondary" style="background-color: var(--pariplus_dark);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <img src="../assets/img/pariplus_logo_white.svg" alt="PariPlus" height="70">
+            </div>
+            <div class="col-md-4">
+                Pariplus est un site de pari en ligne et de prédiction de rencontres et de résultats responsable.
+            </div>
+            <div class="col-md-3">
+                <div class="row"><a href="../" class="link-secondary">Accueil</a></div>
+                <div class="row"><a href="#" class="link-secondary">Parier</a></div>
+                <div class="row"><a href="../statistiques.html" class="link-secondary">Statistiques</a></div>
+                <div class="row"><a href="../predictions.html" class="link-secondary">Prédictions</a></div>
+                <div class="row"><a href="#" class="link-secondary">A propos de Pariplus</a></div>
+            </div>
+            <div class="col-md-3">
+                <div class="row"><a href="../account/" class="link-secondary">Mon compte</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<img class="d-block d-sm-none" src="../assets/img/Wilhem%20Motors.jpg" style="bottom: 0; width: 100vw;">
+<img class="d-block d-sm-none" src="../assets/img/Wilhem%20Motors.jpg" style="position: fixed; bottom: 0; width: 100vw;">
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</html>
