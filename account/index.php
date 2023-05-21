@@ -31,6 +31,9 @@ $isAdmin = $result['isAdmin'];
 
 $maxBets = $db->query("SELECT betlimit FROM users WHERE id = $user_id;")->fetch_assoc()['betlimit'];
 
+// Get list of 5 last bets
+$bets = $db->query("SELECT * FROM bets WHERE user = '$user_id' ORDER BY id DESC LIMIT 5;")->fetch_all();
+
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +61,7 @@ $maxBets = $db->query("SELECT betlimit FROM users WHERE id = $user_id;")->fetch_
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav">
-                <a class="nav-link" href="#">Parier</a>
+                <a class="nav-link" href="../paris/">Parier</a>
                 <a class="nav-link" href="../statistiques.html">Statistiques</a>
                 <a class="nav-link" href="../predictions.html">Prédictions</a>
                 <?php
@@ -125,20 +128,122 @@ $maxBets = $db->query("SELECT betlimit FROM users WHERE id = $user_id;")->fetch_
         <div class="col-lg-4">
             <div class="bloc">
                 <div class="bloc-content">
-                    <h4>Historique des paris</h4>
-<!--                    Vous n'avez aucun pari enregistré.-->
-                    <div class="card text-bg-success" style="margin-top: 10px">
-                        <div class="card-header">PSG - FCB | 7 - 0</div>
-                        <div class="card-footer">Gagnant : + 370EUR</div>
-                    </div>
-                    <div class="card text-bg-danger" style="margin-top: 10px">
-                        <div class="card-header">PSG - FCB | 0 - 1</div>
-                        <div class="card-footer">Perdant : - 1EUR</div>
-                    </div>
-                    <div class="card text-bg-success" style="margin-top: 10px">
-                        <div class="card-header">PSG - FCB | 7 - 0</div>
-                        <div class="card-footer">Gagnant : + 370EUR</div>
-                    </div>
+                    <h4>VOS 5 DERNIERS PARIS</h4>
+                    <?php
+                    if (count($bets) == 0) {
+                        echo "Vous n'avez encore effectué aucun pari.";
+                    } else {
+                        foreach ($bets as &$bet) {
+                            // Get bet info
+                            $bet_id = $bet[0];
+                            $bet_type = $bet[2];
+                            $bet_team1 = $bet[3];
+                            $bet_team1 = $db->query("SELECT name FROM teams WHERE id = $bet_team1;")->fetch_assoc()['name'];
+                            $bet_score1 = $bet[4];
+                            $bet_team2 = $bet[5];
+                            $bet_team2 = $db->query("SELECT name FROM teams WHERE id = $bet_team2;")->fetch_assoc()['name'];
+                            $bet_score2 = $bet[6];
+                            $bet_match_date = $bet[7];
+                            $bet_date = $bet[8];
+                            $bet_amount = $bet[9];
+
+                            echo "
+                            <br>
+                            <div class=\"card\">
+                                <div class=\"card-body\">
+                                    <h5 class=\"card-title\">$bet_team1 - $bet_team2</h5>
+                                    <h6 class=\"card-subtitle mb-2 text-body-secondary\">Match du $bet_match_date</h6>
+                                    <p class='card-text'>";
+
+                            switch ($bet_type) {
+                                case "0":
+                                    echo "Pari score exact.<br>$bet_team1 : $bet_score1<br>$bet_team2 : $bet_score2<br>";
+                                    break;
+                                case "1":
+                                    echo "Pari victoire d'un club.<br>Victoire de ";
+                                    echo ($bet_score1 == "1") ? $bet_team1 : $bet_team2;
+                                    echo ".<br>";
+                                    break;
+                                case "2":
+                                    echo "Pari score d'un club.<br>";
+                                    echo (!empty($bet_score1) || $bet_score1 === "0") ? "$bet_team1 : $bet_score1" : "$bet_team2 : $bet_score2";
+                                    echo "<br>";
+                                    break;
+                                case "3":
+                                    echo "Pari nombre total de buts.<br>Nombre de buts : $bet_score1.<br>";
+                                    break;
+                                case "4":
+                                    echo "Pari écart de buts.<br>Ecart de buts : $bet_score1.<br>";
+                                    break;
+                            }
+
+                            echo "Mise : $bet_amount (EUR).</p></div>";
+
+
+                            // Check bet result
+                            $result = $db->query("SELECT * FROM matchs WHERE team1 = '$bet[3]' AND team2 = '$bet[5]' AND date = '$bet_match_date';")->fetch_assoc();
+
+                            if ($result) {
+                                $match_team1 = $result['team1'];
+                                $match_score1 = $result['score1'];
+                                $match_team2 = $result['team2'];
+                                $match_score2 = $result['score2'];
+
+                                $won = false;
+
+                                switch ($bet_type) {
+                                    case "0":
+                                        if ($match_score1 == $bet_score1 && $match_score2 == $bet_score2) {
+                                            $won = true;
+                                        }
+                                        break;
+                                    case "1":
+                                        if ($bet_score1 == "1" && $match_score1 > $match_score2) {
+                                            $won = true;
+                                        } else if ($bet_score2 == "1" && $match_score1 < $match_score2) {
+                                            $won = true;
+                                        }
+                                        break;
+                                    case "2":
+                                        if ($bet_score1 == $match_score1 || $bet_score2 == $match_score2) {
+                                            $won = true;
+                                        }
+                                        break;
+                                    case "3":
+                                        if ($bet_score1 == ($match_score1 + $match_score2))
+                                            $won = true;
+                                        break;
+                                    case "4":
+                                        if ($bet_score1 == abs($match_score1 - $match_score2))
+                                            $won = true;
+                                        break;
+                                }
+
+                                if ($won) {
+                                    echo "
+                                        <div>
+                                            <div class='card-footer text-bg-success'>
+                                                Résultat : + $bet_amount (EUR)
+                                            </div>
+                                        </div>
+                                    ";
+                                } else {
+                                    echo "
+                                        <div>
+                                            <div class='card-footer text-bg-danger'>
+                                                Résultat : - $bet_amount (EUR)
+                                            </div>
+                                        </div>
+                                    ";
+                                }
+                            } else {
+                                echo "En attente du match...";
+                            }
+
+                            echo "</div>";
+                        }
+                    }
+                    ?>
                 </div>
             </div>
             <div class="bloc">
@@ -158,7 +263,7 @@ $maxBets = $db->query("SELECT betlimit FROM users WHERE id = $user_id;")->fetch_
             </div>
             <div class="col-md-3">
                 <div class="row"><a href="../" class="link-secondary">Accueil</a></div>
-                <div class="row"><a href="#" class="link-secondary">Parier</a></div>
+                <div class="row"><a href="../paris/" class="link-secondary">Parier</a></div>
                 <div class="row"><a href="../statistiques.html" class="link-secondary">Statistiques</a></div>
                 <div class="row"><a href="../predictions.html" class="link-secondary">Prédictions</a></div>
                 <div class="row"><a href="#" class="link-secondary">A propos de Pariplus</a></div>

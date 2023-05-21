@@ -1,6 +1,28 @@
 <?php
 
+require_once 'bet.php';
+global $db;
+global $user_id;
+
+// Check if user is connected
+if (!isset($_SESSION['username'])) {
+    if (isset($_COOKIE['pput'])) {
+        if (!logToken()) {
+            header('location: ../account/logout.php');
+        }
+    } else {
+        header('location: ../account/login/');
+    }
+}
+
+// Get list of teams
+$teams = $db->query("SELECT * FROM teams;")->fetch_all();
+
+// Get list of 5 last bets
+$bets = $db->query("SELECT * FROM bets WHERE user = '$user_id' ORDER BY id DESC LIMIT 5;")->fetch_all();
+
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -50,22 +72,66 @@
                         <div class="mb-3">
                             <label for="selectTeam1" class="form-label">Equipe 1</label>
                             <select id="selectTeam1" name="selectTeam1" class="form-select">
-
+                                <?php
+                                foreach ($teams as &$team) {
+                                    $teamId = $team[0];
+                                    $teamName = $team[1];
+                                    echo "<option value=\"$teamId\">$teamName</option>";
+                                }
+                                ?>
                             </select>
+                            <?php
+                            if (isset($errors)) {
+                                if (in_array("team1_empty", $errors))
+                                    echo "<p class=\"text-danger\">* L'équipe ne peut pas être vide.</p>";
+                                if (in_array("team1_illegal_value", $errors))
+                                    echo "<p class=\"text-danger\">* L'équipe n'est pas valide.</p>";
+                                if (in_array("teams_same", $errors))
+                                    echo "<p class=\"text-danger\">* Les équipes ne peuvent pas être identiques.</p>";
+                            }
+                            ?>
                         </div>
                         <div class="mb-3">
                             <label for="selectTeam2" class="form-label">Equipe 2</label>
                             <select id="selectTeam2" name="selectTeam2" class="form-select">
-
+                                <?php
+                                foreach ($teams as &$team) {
+                                    $teamId = $team[0];
+                                    $teamName = $team[1];
+                                    echo "<option value=\"$teamId\">$teamName</option>";
+                                }
+                                ?>
                             </select>
+                            <?php
+                            if (isset($errors)) {
+                                if (in_array("team2_empty", $errors))
+                                    echo "<p class=\"text-danger\">* L'équipe ne peut pas être vide.</p>";
+                                if (in_array("team2_illegal_value", $errors))
+                                    echo "<p class=\"text-danger\">* L'équipe n'est pas valide.</p>";
+                            }
+                            ?>
                         </div>
                         <div class="mb-3">
                             <label for="inputDate">Date du match</label>
                             <input type="date" class="form-control" id="inputDate" name="inputDate">
+                            <?php
+                            if (isset($errors)) {
+                                if (in_array("date_empty", $errors))
+                                    echo "<p class=\"text-danger\">* La date ne peut pas être vide.</p>";
+                                if (in_array("date_illegal_value", $errors))
+                                    echo "<p class=\"text-danger\">* La date n'est pas valide.</p>";
+                            }
+                            ?>
                         </div>
                         <div class="mb-3">
                             <label for="inputAmount">Montant de la mise (EUR)</label>
                             <input type="number" class="form-control" id="inputAmount" name="inputAmount" value="10">
+                            <?php
+                            if (isset($errors)) {
+                                if (in_array("amount_illegal_value", $errors))
+                                    echo "<p class='text-danger'>* Le montant n'est pas valide.</p>";
+                            }
+                            ?>
                         </div>
 
                         <div class="accordion" id="accordionParis">
@@ -102,13 +168,13 @@
                                         Sélectionner un club sur lequel parier la victoire : <br><br>
                                         <div class="mb-3">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="radioTeam1" id="radioTeam1" checked>
+                                                <input class="form-check-input" type="radio" name="radioTeam" id="radioTeam1" value="1" checked>
                                                 <label class="form-check-label" for="radioTeam1">
                                                     Equipe 1
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="radioTeam2" id="radioTeam2">
+                                                <input class="form-check-input" type="radio" name="radioTeam" id="radioTeam2" value="2">
                                                 <label class="form-check-label" for="radioTeam2">
                                                     Equipe 2
                                                 </label>
@@ -164,8 +230,122 @@
         <div class="col-lg-4">
             <div class="bloc">
                 <div class="bloc-content">
-                    <h4>VOTRE PARI</h4>
-                    Connectez-vous pour voir votre pari.
+                    <h4>VOS 5 DERNIERS PARIS</h4>
+                    <?php
+                    if (count($bets) == 0) {
+                        echo "Vous n'avez encore effectué aucun pari.";
+                    } else {
+                        foreach ($bets as &$bet) {
+                            // Get bet info
+                            $bet_id = $bet[0];
+                            $bet_type = $bet[2];
+                            $bet_team1 = $bet[3];
+                            $bet_team1 = $db->query("SELECT name FROM teams WHERE id = $bet_team1;")->fetch_assoc()['name'];
+                            $bet_score1 = $bet[4];
+                            $bet_team2 = $bet[5];
+                            $bet_team2 = $db->query("SELECT name FROM teams WHERE id = $bet_team2;")->fetch_assoc()['name'];
+                            $bet_score2 = $bet[6];
+                            $bet_match_date = $bet[7];
+                            $bet_date = $bet[8];
+                            $bet_amount = $bet[9];
+
+                            echo "
+                            <br>
+                            <div class=\"card\">
+                                <div class=\"card-body\">
+                                    <h5 class=\"card-title\">$bet_team1 - $bet_team2</h5>
+                                    <h6 class=\"card-subtitle mb-2 text-body-secondary\">Match du $bet_match_date</h6>
+                                    <p class='card-text'>";
+
+                            switch ($bet_type) {
+                                case "0":
+                                    echo "Pari score exact.<br>$bet_team1 : $bet_score1<br>$bet_team2 : $bet_score2<br>";
+                                    break;
+                                case "1":
+                                    echo "Pari victoire d'un club.<br>Victoire de ";
+                                    echo ($bet_score1 == "1") ? $bet_team1 : $bet_team2;
+                                    echo ".<br>";
+                                    break;
+                                case "2":
+                                    echo "Pari score d'un club.<br>";
+                                    echo (!empty($bet_score1) || $bet_score1 === "0") ? "$bet_team1 : $bet_score1" : "$bet_team2 : $bet_score2";
+                                    echo "<br>";
+                                    break;
+                                case "3":
+                                    echo "Pari nombre total de buts.<br>Nombre de buts : $bet_score1.<br>";
+                                    break;
+                                case "4":
+                                    echo "Pari écart de buts.<br>Ecart de buts : $bet_score1.<br>";
+                                    break;
+                            }
+
+                            echo "Mise : $bet_amount (EUR).</p></div>";
+
+
+                            // Check bet result
+                            $result = $db->query("SELECT * FROM matchs WHERE team1 = '$bet[3]' AND team2 = '$bet[5]' AND date = '$bet_match_date';")->fetch_assoc();
+
+                            if ($result) {
+                                $match_team1 = $result['team1'];
+                                $match_score1 = $result['score1'];
+                                $match_team2 = $result['team2'];
+                                $match_score2 = $result['score2'];
+
+                                $won = false;
+
+                                switch ($bet_type) {
+                                    case "0":
+                                        if ($match_score1 == $bet_score1 && $match_score2 == $bet_score2) {
+                                            $won = true;
+                                        }
+                                        break;
+                                    case "1":
+                                        if ($bet_score1 == "1" && $match_score1 > $match_score2) {
+                                            $won = true;
+                                        } else if ($bet_score2 == "1" && $match_score1 < $match_score2) {
+                                            $won = true;
+                                        }
+                                        break;
+                                    case "2":
+                                        if ($bet_score1 == $match_score1 || $bet_score2 == $match_score2) {
+                                            $won = true;
+                                        }
+                                        break;
+                                    case "3":
+                                        if ($bet_score1 == ($match_score1 + $match_score2))
+                                            $won = true;
+                                        break;
+                                    case "4":
+                                        if ($bet_score1 == abs($match_score1 - $match_score2))
+                                            $won = true;
+                                        break;
+                                }
+
+                                if ($won) {
+                                    echo "
+                                        <div>
+                                            <div class='card-footer text-bg-success'>
+                                                Résultat : + $bet_amount (EUR)
+                                            </div>
+                                        </div>
+                                    ";
+                                } else {
+                                    echo "
+                                        <div>
+                                            <div class='card-footer text-bg-danger'>
+                                                Résultat : - $bet_amount (EUR)
+                                            </div>
+                                        </div>
+                                    ";
+                                }
+                            } else {
+                                echo "En attente du match...";
+                            }
+
+                            echo "</div>";
+                        }
+                    }
+                    ?>
                 </div>
             </div>
             <div class="bloc">
