@@ -19,7 +19,7 @@ if (!isset($_SESSION['username'])) {
 // Get user info
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
-$result = $db->query("SELECT id FROM users WHERE username = '$username' AND password = '$password';")->fetch_assoc();
+$result = $db->query("SELECT id, isAdmin FROM users WHERE username = '$username' AND password = '$password';")->fetch_assoc();
 if (!$result) {
     // User info is incorrect
     header('location: login/');
@@ -27,6 +27,7 @@ if (!$result) {
 }
 
 $user_id = $result['id'];
+$isAdmin = $result['isAdmin'];
 
 $maxBets = $db->query("SELECT betlimit FROM users WHERE id = $user_id;")->fetch_assoc()['betlimit'];
 
@@ -60,6 +61,11 @@ $maxBets = $db->query("SELECT betlimit FROM users WHERE id = $user_id;")->fetch_
                 <a class="nav-link" href="#">Parier</a>
                 <a class="nav-link" href="../statistiques.html">Statistiques</a>
                 <a class="nav-link" href="../predictions.html">Prédictions</a>
+                <?php
+                if ($isAdmin) {
+                    echo "<a class=\"nav-link\" href=\"admin/\">Administration</a>";
+                }
+                ?>
                 <a class="nav-link" href="logout.php">Déconnexion</a>
             </div>
         </div>
