@@ -25,6 +25,9 @@ if (isset($_SESSION['username'])) {
     $bets = $db->query("SELECT * FROM bets WHERE user = '$user_id' ORDER BY id DESC LIMIT 5;")->fetch_all();
 }
 
+require_once "get_add.php";
+$ad_path = get_add();
+
 ?>
 
 <!DOCTYPE html>
@@ -207,7 +210,7 @@ if (isset($_SESSION['username'])) {
             echo "</div></div>";
             ?>
             <div class="bloc">
-                <img class="bloc-ad d-sm-block d-none" src="assets/img/Wilhem%20Motors.jpg" alt="Publicité">
+                <img class="bloc-ad d-sm-block d-none" src="<?php echo $ad_path; ?>" alt="Publicité">
             </div>
         </div>
     </div>
@@ -234,8 +237,8 @@ if (isset($_SESSION['username'])) {
         </div>
     </div>
 </div>
-<img class="d-block d-sm-none" src="assets/img/Wilhem%20Motors.jpg" style="bottom: 0; width: 100vw;">
-<img class="d-block d-sm-none" src="assets/img/Wilhem%20Motors.jpg" style="position: fixed; bottom: 0; width: 100vw;">
+<img class="d-block d-sm-none" src="<?php echo $ad_path; ?>" style="bottom: 0; width: 100vw;">
+<img class="d-block d-sm-none" src="<?php echo $ad_path; ?>" style="position: fixed; bottom: 0; width: 100vw;">
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </html>
