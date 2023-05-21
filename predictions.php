@@ -1,3 +1,10 @@
+<?php
+
+require_once "get_ad.php";
+$ad_path = get_ad();
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -28,7 +35,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav">
                 <a class="nav-link" href="paris/">Parier</a>
-                <a class="nav-link" href="statistiques.html">Statistiques</a>
+                <a class="nav-link" href="statistiques.php">Statistiques</a>
                 <a class="nav-link" href="#">Prédictions</a>
                 <a class="nav-link" href="account/">Mon Compte</a>
             </div>
@@ -60,7 +67,7 @@
         </div>
         <div class="col-lg-4">
             <div class="bloc">
-                <img class="bloc-ad d-sm-block d-none" src="assets/img/Wilhem%20Motors.jpg" alt="Publicité">
+                <img class="bloc-ad d-sm-block d-none" src="<?php echo $ad_path; ?>" alt="Publicité">
             </div>
         </div>
     </div>
@@ -84,7 +91,7 @@
             <div class="col-md-3">
                 <div class="row"><a href="index.php" class="link-secondary">Accueil</a></div>
                 <div class="row"><a href="paris/" class="link-secondary">Parier</a></div>
-                <div class="row"><a href="statistiques.html" class="link-secondary">Statistiques</a></div>
+                <div class="row"><a href="statistiques.php" class="link-secondary">Statistiques</a></div>
                 <div class="row"><a href="#" class="link-secondary">Prédictions</a></div>
                 <div class="row"><a href="#" class="link-secondary">A propos de Pariplus</a></div>
             </div>
@@ -94,8 +101,8 @@
         </div>
     </div>
 </div>
-<img class="d-block d-sm-none" src="assets/img/Wilhem%20Motors.jpg" style="bottom: 0; width: 100vw;">
-<img class="d-block d-sm-none" src="assets/img/Wilhem%20Motors.jpg" style="position: fixed; bottom: 0; width: 100vw;">
+<img class="d-block d-sm-none" src="<?php echo $ad_path; ?>" style="bottom: 0; width: 100vw;">
+<img class="d-block d-sm-none" src="<?php echo $ad_path; ?>" style="position: fixed; bottom: 0; width: 100vw;">
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"

@@ -218,8 +218,8 @@ $matches = $db->query("SELECT * FROM matchs ORDER BY date DESC;")->fetch_all();
             <div class="col-md-3">
                 <div class="row"><a href="../../" class="link-secondary">Accueil</a></div>
                 <div class="row"><a href="../../paris/" class="link-secondary">Parier</a></div>
-                <div class="row"><a href="../../statistiques.html" class="link-secondary">Statistiques</a></div>
-                <div class="row"><a href="../../predictions.html" class="link-secondary">Prédictions</a></div>
+                <div class="row"><a href="../../statistiques.php" class="link-secondary">Statistiques</a></div>
+                <div class="row"><a href="../../predictions.php" class="link-secondary">Prédictions</a></div>
                 <div class="row"><a href="#" class="link-secondary">A propos de Pariplus</a></div>
             </div>
             <div class="col-md-3">
