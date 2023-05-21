@@ -2,7 +2,10 @@
 
 require_once 'bet.php';
 global $db;
+global $user;
 global $user_id;
+global $betLimit;
+global $difference;
 
 // Check if user is connected
 if (!isset($_SESSION['username'])) {
@@ -68,7 +71,29 @@ $bets = $db->query("SELECT * FROM bets WHERE user = '$user_id' ORDER BY id DESC 
 
                     <br><br>
 
+                    <?php
+                    if ($betLimit !== "0") {
+                        if ($difference > 0)
+                            echo "
+                                <div class=\"alert alert-light\" role=\"alert\">
+                                  Vous avez fixé une limite de $betLimit EUR par mois. Il vous reste $difference EUR.
+                                </div>";
+                        else
+                            echo "
+                                <div class=\"alert alert-light\" role=\"alert\">
+                                  Vous avez fixé une limite de $betLimit EUR par mois. Il vous reste $difference EUR.<br>
+                                  La limite a été dépassée ou atteinte et les paris sont bloqués.
+                                </div>";
+                    } else {
+                        echo "
+                            <div class=\"alert alert-secondary\" role=\"alert\">
+                              Vous n'avez fixé aucune limite de pari. Pour en mettre une, rendez-vous dans les paramètres liés à votre compte.
+                            </div>";
+                    }
+                    ?>
+
                     <form action="index.php" method="POST">
+                        <fieldset <?php if ($difference <= 0 && $betLimit !== "0") echo "disabled"; ?>>
                         <div class="mb-3">
                             <label for="selectTeam1" class="form-label">Equipe 1</label>
                             <select id="selectTeam1" name="selectTeam1" class="form-select">
@@ -219,6 +244,7 @@ $bets = $db->query("SELECT * FROM bets WHERE user = '$user_id' ORDER BY id DESC 
                                 </div>
                             </div>
                         </div>
+                        </fieldset>
                     </form>
 
                     <div class="alert alert-danger" style="margin-top: 20px; margin-bottom: 0;">
