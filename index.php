@@ -192,7 +192,12 @@ if (isset($_SESSION['username'])) {
                                     ";
                             }
                         } else {
-                            echo "En attente du match...";
+                            echo "
+                                <div>
+                                    <div class='card-footer text-bg-secondary'>
+                                        En attente du match...
+                                    </div>
+                                </div>";
                         }
 
                         echo "</div>";

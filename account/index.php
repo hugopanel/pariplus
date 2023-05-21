@@ -237,7 +237,12 @@ $bets = $db->query("SELECT * FROM bets WHERE user = '$user_id' ORDER BY id DESC 
                                     ";
                                 }
                             } else {
-                                echo "En attente du match...";
+                                echo "
+                                <div>
+                                    <div class='card-footer text-bg-secondary'>
+                                        En attente du match...
+                                    </div>
+                                </div>";
                             }
 
                             echo "</div>";
