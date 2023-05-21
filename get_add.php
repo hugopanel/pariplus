@@ -5,5 +5,5 @@ function get_add() {
     $files = scandir($path);
     $files = array_diff(scandir($path), array('.', '..'));
 
-    return "/assets/img/ads" . $files[array_rand($files)];
+    return "/assets/img/ads/" . $files[array_rand($files)];
 }
