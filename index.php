@@ -29,8 +29,8 @@ if (isset($_SESSION['username'])) {
     $bets = $db->query("SELECT * FROM bets WHERE user = '$user_id' ORDER BY id DESC LIMIT 5;")->fetch_all();
 }
 
-require_once "get_add.php";
-$ad_path = get_add();
+require_once "get_ad.php";
+$ad_path = get_ad();
 
 ?>
 
@@ -60,8 +60,8 @@ $ad_path = get_add();
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav">
                 <a class="nav-link" href="paris/">Parier</a>
-                <a class="nav-link" href="statistiques.html">Statistiques</a>
-                <a class="nav-link" href="predictions.html">Prédictions</a>
+                <a class="nav-link" href="statistiques.php">Statistiques</a>
+                <a class="nav-link" href="predictions.php">Prédictions</a>
                 <a class="nav-link" href="account/">Mon Compte</a>
             </div>
         </div>
@@ -231,8 +231,8 @@ $ad_path = get_add();
             <div class="col-md-3">
                 <div class="row"><a href="#" class="link-secondary">Accueil</a></div>
                 <div class="row"><a href="paris/" class="link-secondary">Parier</a></div>
-                <div class="row"><a href="statistiques.html" class="link-secondary">Statistiques</a></div>
-                <div class="row"><a href="predictions.html" class="link-secondary">Prédictions</a></div>
+                <div class="row"><a href="statistiques.php" class="link-secondary">Statistiques</a></div>
+                <div class="row"><a href="predictions.php" class="link-secondary">Prédictions</a></div>
                 <div class="row"><a href="#" class="link-secondary">A propos de Pariplus</a></div>
             </div>
             <div class="col-md-3">

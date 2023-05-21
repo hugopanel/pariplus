@@ -10,7 +10,7 @@ $password = $_SESSION['password'];
 $user = $db->query("SELECT * FROM users WHERE username = '$username' AND password = '$password';")->fetch_assoc();
 if (!$user) {
     // User info is incorrect
-    header('location: ../login/');
+    header('location: ../account/login/');
     die;
 }
 

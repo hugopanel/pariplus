@@ -1,6 +1,6 @@
 <?php
 
-function get_add() {
+function get_ad() {
     $path    = 'assets/img/ads';
     $files = scandir($path);
     $files = array_diff(scandir($path), array('.', '..'));
