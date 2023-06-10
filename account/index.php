@@ -119,9 +119,13 @@ $ad_path = get_ad('../');
                             <input type="number" class="form-control" id="inputMaxBets" name="inputMaxBets" placeholder="<?php echo $maxBets; ?>">
                             <p>&bull; Un montant de 0€ ne fixe aucune limite. </p>
                             <?php
-                            if (isset($errors))
+                            if (isset($errors)) {
                                 if (in_array("maxBets_illegal_value", $errors))
                                     echo "<p class=\"text-danger\">* Le montant est invalide.</p>";
+                                if (in_array("maxBets_too_high", $errors))
+                                    echo "<p class='text-danger'>* La limite ne peut pas dépasser 500€.</p>";
+                            }
+
                             ?>
                         </div>
                         <button type="submit" class="btn btn-primary" name="buttonSaveSettings">Sauvegarder les modifications</button>

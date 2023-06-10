@@ -20,7 +20,7 @@ $user_id = $user['id']; // Get the user id
 $betLimit = $user['betlimit'];
 $difference = $betLimit - $db->query("SELECT SUM(amount) FROM bets WHERE user = $user_id AND bet_date >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH);")->fetch_all()[0][0];
 
-if ($difference <= 0 && $betLimit !== "0") {
+if ($difference > 0 && $betLimit !== "0") {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // User submitted the form
 

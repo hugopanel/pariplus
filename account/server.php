@@ -183,6 +183,11 @@ if (isset($_POST['buttonSaveSettings'])) {
             return;
         }
 
+        if ($maxBets > 500) {
+            $errors[] = "maxBets_too_high";
+            return;
+        }
+
         if ($maxBets <= 0) $maxBets = 0;
 
         $db->query("UPDATE users SET betlimit = $maxBets WHERE id = $user_id;");
