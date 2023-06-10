@@ -117,7 +117,7 @@ $ad_path = get_ad('../');
                         <div class="mb-3">
                             <label for="inputMaxBets">Limite de paris (EUR)</label>
                             <input type="number" class="form-control" id="inputMaxBets" name="inputMaxBets" placeholder="<?php echo $maxBets; ?>">
-                            <p>&bull; Un montant de 0€ ne fixe aucune limite. </p>
+<!--                            <p>&bull; Un montant de 0€ ne fixe aucune limite. </p>--> <!-- On supprime le message mais on garde la limite de 0 possible au cas où... -->
                             <?php
                             if (isset($errors)) {
                                 if (in_array("maxBets_illegal_value", $errors))

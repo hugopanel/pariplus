@@ -73,11 +73,12 @@ $ad_path = get_ad();
             <div class="bloc">
                 <div class="bloc-hero">
                     <img class="bloc-hero-img" src="assets/img/pexels-pixabay-262506-modif.jpg" alt="">
-                    <h1 class="bloc-hero-title" style="color: white;">LE PREMIER SITE<br>DE PARI EN LIGNE</h1>
+                    <h1 class="bloc-hero-title" style="color: white;">LE PREMIER SITE<br>DE PARI RESPONSABLE</h1>
                 </div>
                 <div class="bloc-content">
                     <h4>PARIEZ PLUS,<br>PERDEZ MOINS</h4>
                     Grâce à notre algorithme de prédiction de rencontres et de résultats de nouvelle génération, ne perdez plus jamais !
+                    <br>Nous intégrons également une limite ajustable qui vous permet de ne pas dépenser au delà de vos moyens.
                 </div>
             </div>
         </div>
