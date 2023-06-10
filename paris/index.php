@@ -35,7 +35,7 @@ $ad_path = get_ad('../');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PariPlus</title>
+    <title>Parimieux</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +48,7 @@ $ad_path = get_ad('../');
 <div class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: var(--pariplus_red); padding: 0 10px 0 10px;">
     <div class="container">
         <a class="navbar-brand" href="../">
-            <img src="../assets/img/pariplus_logo_white.svg" alt="PariPlus" height="70" style="max-height: 70px;">
+            <img src="../assets/img/parimieux_logo_white.svg" alt="Parimieux" height="70" style="max-height: 70px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
             <i class="bi bi-list" style="display: inline-block; font-size: 1.5em; color: white;"></i>
@@ -393,17 +393,17 @@ $ad_path = get_ad('../');
     <div class="container">
         <div class="row">
             <div class="col-md-2">
-                <img src="../assets/img/pariplus_logo_white.svg" alt="PariPlus" height="70">
+                <img src="../assets/img/parimieux_logo_white.svg" alt="Parimieux" height="70">
             </div>
             <div class="col-md-4">
-                Pariplus est un site de pari en ligne et de prédiction de rencontres et de résultats responsable.
+                Parimieux est un site de pari en ligne et de prédiction de rencontres et de résultats responsable.
             </div>
             <div class="col-md-3">
                 <div class="row"><a href="../" class="link-secondary">Accueil</a></div>
                 <div class="row"><a href="#" class="link-secondary">Parier</a></div>
                 <div class="row"><a href="../statistiques.php" class="link-secondary">Statistiques</a></div>
                 <div class="row"><a href="../predictions.php" class="link-secondary">Prédictions</a></div>
-                <div class="row"><a href="#" class="link-secondary">A propos de Pariplus</a></div>
+                <div class="row"><a href="#" class="link-secondary">A propos de Parimieux</a></div>
             </div>
             <div class="col-md-3">
                 <div class="row"><a href="../account/" class="link-secondary">Mon compte</a></div>
