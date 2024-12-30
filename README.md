@@ -1,14 +1,17 @@
-Pariplus
-=================
+# Pariplus
 
-Bienvenue sur le dépôt Git du projet Pariplus (projet transverse de L3).
+![](readme_assets/pariplus_header.png)
 
+**Pariplus** <small>(renamed to PariMieux for the final presentation)</small> **is an online betting platform designed with responsible betting and ease of use in mind.**
 
-## Objectif
-Pariplus est un site de paris en ligne et de prédiction de rencontres sportives (limité au football). Il rentre dans le cadre du projet transverse de troisième année à Efrei Paris.
+It fixes a **limit** by default to discourage players from betting too much each week, and includes a "**Predictions**" page to help new players know what team to bet on.
 
-## Réalisation
-Le site web est codé en :
-- HTML/CSS pour le front-end
-- PHP pour le back-end
-- MySQL pour la base de données
+Pariplus was created as part of the **final project** ("projet transverse") of our third year at **Efrei Paris**. It was selected for the **TechDay**, a competition between the 12 best projects of second and third-year students.
+
+## Technologies
+
+Pariplus uses the following tech stack:
+
+- HTML/CSS for the frontend
+- PHP for the backend
+- MySQL as a database
